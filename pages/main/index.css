@@ -387,8 +387,8 @@ h6 {
 .section-start {
   position: relative;
   padding: 180px 0px 0px 0px;
-  background-image: url(../assets/background/start-screen-gradient-background.png),
-    url(../assets/background/start-screen-background.png);
+  background-image: url(../../assets/background/start-screen-gradient-background.png),
+    url(../../assets/background/start-screen-background.png);
   background-size: cover;
 }
 
@@ -584,11 +584,11 @@ h6 {
 }
 
 .left-button {
-  background-image: url(../assets/arrow/arrow\ left.svg);
+  background-image: url(../../assets/arrow/arrow\ left.svg);
 }
 
 .right-button {
-  background-image: url(../assets/arrow/Arrow\ right.svg);
+  background-image: url(../../assets/arrow/Arrow\ right.svg);
 }
 
 .slider-button {
@@ -599,6 +599,7 @@ h6 {
   background-repeat: no-repeat;
   background-position: center;
   align-self: center;
+  cursor: pointer;
 }
 
 .slider-button:hover {
@@ -653,6 +654,7 @@ h6 {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
+  cursor: pointer;
 }
 
 .pets-button {
@@ -664,6 +666,7 @@ h6 {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
+  cursor: pointer;
 }
 
 .pets-button:hover {
@@ -784,39 +787,39 @@ h6 {
 }
 
 .list-item:nth-child(1)::before {
-  background-image: url(../assets/helt-list-icons/icon-pet-food.svg);
+  background-image: url(../../assets/helt-list-icons/icon-pet-food.svg);
 }
 
 .list-item:nth-child(2)::before {
-  background-image: url(../assets/helt-list-icons/icon-transportation.svg);
+  background-image: url(../../assets/helt-list-icons/icon-transportation.svg);
 }
 
 .list-item:nth-child(3)::before {
-  background-image: url(../assets/helt-list-icons/icon-toys.svg);
+  background-image: url(../../assets/helt-list-icons/icon-toys.svg);
 }
 
 .list-item:nth-child(4)::before {
-  background-image: url(../assets/helt-list-icons/bowls-and-cups.svg);
+  background-image: url(../../assets/helt-list-icons/bowls-and-cups.svg);
 }
 
 .list-item:nth-child(5)::before {
-  background-image: url(../assets/helt-list-icons/shampoos.svg);
+  background-image: url(../../assets/helt-list-icons/shampoos.svg);
 }
 
 .list-item:nth-child(6)::before {
-  background-image: url(../assets/helt-list-icons/vitamins.svg);
+  background-image: url(../../assets/helt-list-icons/vitamins.svg);
 }
 
 .list-item:nth-child(7)::before {
-  background-image: url(../assets/helt-list-icons/medicines.svg);
+  background-image: url(../../assets/helt-list-icons/medicines.svg);
 }
 
 .list-item:nth-child(8)::before {
-  background-image: url(../assets/helt-list-icons/collars-or-leashes.svg);
+  background-image: url(../../assets/helt-list-icons/collars-or-leashes.svg);
 }
 
 .list-item:nth-child(9)::before {
-  background-image: url(../assets/helt-list-icons/sleeping-area.svg);
+  background-image: url(../../assets/helt-list-icons/sleeping-area.svg);
 }
 
 /*------------section-help-adaptive-styles-----------*/
@@ -922,7 +925,7 @@ h6 {
   content: "";
   width: 30px;
   height: 23px;
-  background-image: url("../assets/icons/credit-card.svg");
+  background-image: url("../../assets/icons/credit-card.svg");
   background-repeat: no-repeat;
 }
 
@@ -998,8 +1001,8 @@ h6 {
 .footer {
   width: 100%;
   max-height: 350px;
-  background-image: url(../assets/background/footer-gradient-background.png),
-    url(../assets/background/footer-background.png);
+  background-image: url(../../assets/background/footer-gradient-background.png),
+    url(../../assets/background/footer-background.png);
   background-size: cover;
 }
 
@@ -1046,7 +1049,7 @@ h6 {
 
 .contacts-link:nth-child(2)::before {
   content: "";
-  background-image: url("../assets/footer-icons/mail.svg");
+  background-image: url("../../assets/footer-icons/mail.svg");
   width: 40px;
   height: 32px;
   background-repeat: no-repeat;
@@ -1055,7 +1058,7 @@ h6 {
 
 .contacts-link:nth-child(3)::before {
   content: "";
-  background-image: url("../assets/footer-icons/phone.svg");
+  background-image: url("../../assets/footer-icons/phone.svg");
   width: 40px;
   height: 32px;
   background-repeat: no-repeat;
@@ -1063,7 +1066,7 @@ h6 {
 
 .locations-link::before {
   content: "";
-  background-image: url("../assets/footer-icons/pin.svg");
+  background-image: url("../../assets/footer-icons/pin.svg");
   min-width: 22px;
   height: 32px;
   background-position: center;
