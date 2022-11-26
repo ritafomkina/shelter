@@ -616,6 +616,10 @@ h6 {
   transition: 3ms;
 }
 
+.slider-line {
+  display: flex;
+}
+
 /* .slider-button:disabled {
     border: 2px solid #F1CDB3;
     background-color: #F6F6F6;
@@ -710,7 +714,7 @@ h6 {
   .slider-space {
     margin-right: 40px;
   }
-  .slider-link:nth-child(4) {
+  .slider-link:nth-child(3) {
     display: none;
   }
 }
@@ -741,7 +745,7 @@ h6 {
   .slider-card {
     margin: 0;
   }
-  .slider-link:nth-child(n + 3) {
+  .slider-link:nth-child(n + 2) {
     display: none;
   }
 }
