@@ -584,7 +584,7 @@ h6 {
 }
 
 .right-button {
-  background-image: url(../../assets/arrow/Arrow\ right.svg);
+  background-image: url(../../assets/arrow/arrow\ right.svg);
 }
 
 .slider-button {
@@ -1080,6 +1080,7 @@ h6 {
 @media (max-width: 1279px) and (min-width: 768px) {
   .footer {
     max-height: 639px;
+    /* max-height: 783px; */
   }
   .footer-wrapper {
     margin-top: 27px; /* в фигме 30px */
