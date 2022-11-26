@@ -183,12 +183,8 @@ h6 {
 .nav-link:active {
   color: #fafafa;
   transition: 3ms;
-  border-bottom: 3px solid #f1cdb3;
+  /* border-bottom: 3px solid #f1cdb3; */
 }
-
-/* .popup {
-  display: none;
-} */
 
 /*-------------header-adaptive-styles-----------*/
 

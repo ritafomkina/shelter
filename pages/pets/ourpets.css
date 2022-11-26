@@ -172,10 +172,6 @@ h6 {
   left: 0;
   background-color: #f1cdb3;
 }
-
-.nav-link:active {
-  border-bottom: 3px solid #f1cdb3;
-}
 /*-------------heder-adaptive-styles-----------*/
 
 @media (max-width: 1279px) and (min-width: 768px) {
