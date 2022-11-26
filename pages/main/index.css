@@ -236,6 +236,15 @@ h6 {
   .header-burger::after {
     bottom: 0;
   }
+  .shadow {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(41, 41, 41, 0.6);
+  }
   .popup {
     position: fixed;
     top: 0;
@@ -243,10 +252,10 @@ h6 {
     z-index: 5;
     transition: 0.3s;
     height: 100%;
-    width: 100%;
+    width: 320px;
     background-color: #292929;
   }
-  .popup.open {
+  .open {
     display: flex;
     right: 0;
   }
@@ -486,6 +495,9 @@ h6 {
   }
   .start-img img {
     max-width: 260px;
+  }
+  .deactivated {
+    pointer-events: none;
   }
 }
 

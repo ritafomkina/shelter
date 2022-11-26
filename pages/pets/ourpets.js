@@ -1,7 +1,10 @@
 "use strict"
 
+// Burger menu
+
 let burger = document.querySelector("#header-burger");
 let popup = document.querySelector("#popup");
+let shadow = document.querySelector("#shadow");
 let headerLink = document.querySelector("#header-link").cloneNode(1);
 let menu = document.querySelector("#menu").cloneNode(1);
 let startFogging = document.querySelector("#start");
@@ -9,17 +12,6 @@ let body = document.body;
 let popupWrapper = '<div class="wrapper popup-wrapper"><div class="popupHeaderWrapper"></div></div>';
 let popupBurger = document.querySelector("#header-burger").cloneNode(1);
 
-function openBurger(e) {
-    e.preventDefault();
-    popup.classList.toggle("open");
-    body.classList.toggle("noscroll");
-    if(!popup.hasChildNodes()) {
-        renderPopup();
-    }
-    else {
-        removeMenu();
-    };
-};
 
 function renderPopup() {
     popup.innerHTML = popupWrapper;
@@ -41,7 +33,22 @@ function handleMenuClick(e) {
     }
   }
 
+ function openBurger(event) {
+    // event.preventDefault();
+    event.stopPropagation();
+
+    popup.classList.toggle("open");
+    body.classList.toggle("noscroll");
+    shadow.classList.toggle("open");
+
+    if(!popup.hasChildNodes()) {
+        renderPopup();
+    } else {
+        removeMenu();
+    };
+};
 
 burger.addEventListener("click", openBurger);
 popupBurger.addEventListener("click", openBurger);
+shadow.addEventListener('click', openBurger);
 menu.addEventListener('click', handleMenuClick);
