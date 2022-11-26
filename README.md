@@ -1,4 +1,4 @@
 # shelter
 shelter task for upSkill 
 
-deploy link: https://ritafomkina.github.io/shelter/pages/main
+link to deploy: https://ritafomkina.github.io/shelter/pages/main
