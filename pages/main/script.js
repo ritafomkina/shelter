@@ -10,18 +10,6 @@ let body = document.body;
 let popupWrapper = '<div class="wrapper popup-wrapper"><div class="popupHeaderWrapper"></div></div>';
 let popupBurger = document.querySelector("#header-burger").cloneNode(1);
 
-function openBurger(event) {
-    event.preventDefault();
-    popup.classList.toggle("open");
-    shadow.classList.toggle("open");
-    body.classList.toggle("noscroll");
-    if(!popup.hasChildNodes()) {
-        renderPopup();
-    }
-    else {
-        removeMenu();
-    };
-};
 
 function renderPopup() {
     popup.innerHTML = popupWrapper;
@@ -44,6 +32,24 @@ function handleMenuClick(e) {
     }
   }
 
+function openBurger(event) {
+
+    // event.preventDefault();
+    event.stopPropagation();
+
+    popup.classList.toggle("open");
+    shadow.classList.toggle("open");
+    body.classList.toggle("noscroll");
+
+    if(!popup.hasChildNodes()) {
+        renderPopup();
+    } else {
+        removeMenu();
+    };
+};
+
+
 burger.addEventListener("click", openBurger);
 popupBurger.addEventListener("click", openBurger);
+shadow.addEventListener('click', openBurger);
 menu.addEventListener('click', handleMenuClick);
