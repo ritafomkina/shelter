@@ -2,6 +2,7 @@
 
 let burger = document.querySelector("#header-burger");
 let popup = document.querySelector("#popup");
+let shadow = document.querySelector("#shadow");
 let headerLink = document.querySelector("#header-link").cloneNode(1);
 let menu = document.querySelector("#menu").cloneNode(1);
 let startFogging = document.querySelector("#start");
@@ -13,6 +14,7 @@ function openBurger(e) {
     e.preventDefault();
     popup.classList.toggle("open");
     body.classList.toggle("noscroll");
+    shadow.classList.toggle("open");
     if(!popup.hasChildNodes()) {
         renderPopup();
     }

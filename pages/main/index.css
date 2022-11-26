@@ -236,6 +236,15 @@ h6 {
   .header-burger::after {
     bottom: 0;
   }
+  .shadow {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(41, 41, 41, 0.6);
+  }
   .popup {
     position: fixed;
     top: 0;
@@ -246,7 +255,7 @@ h6 {
     width: 320px;
     background-color: #292929;
   }
-  .popup.open {
+  .open {
     display: flex;
     right: 0;
   }
@@ -435,10 +444,6 @@ h6 {
 .start-img {
 }
 
-.shadow-display {
-  display: none;
-}
-
 /*------------section-start-adaptive-styles-----------*/
 
 @media (max-width: 1279px) and (min-width: 320px) {
@@ -494,11 +499,6 @@ h6 {
   .deactivated {
     pointer-events: none;
   }
-  .shadow {
-    background-color: rgba(41, 41, 41, 0.6);
-    /* position: ; */
-  }
-
 }
 
 @media (max-width: 767px) and (min-width: 375px) {
