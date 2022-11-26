@@ -635,6 +635,10 @@ h6 {
   transition: 3ms;
 }
 
+/* .slider-link:nth-child(n+4) {
+  display: none;
+} */
+
 .slider-card {
   max-width: 270px;
   height: 435px;
@@ -684,6 +688,14 @@ h6 {
 .pets-button:hover {
   background: #fddcc4;
   transition: 3ms;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: inline;
 }
 
 /*------------section-pets-adaptive-styles-----------*/

@@ -57,3 +57,56 @@ burger.addEventListener("click", openBurger);
 popupBurger.addEventListener("click", openBurger);
 shadow.addEventListener('click', openBurger);
 menu.addEventListener('click', handleMenuClick);
+
+// carousel
+
+const slider = document.querySelector(".slider-line");
+const sliderItems = Array.from(slider.children);
+const leftBtn = document.querySelector(".left-button");
+const rightBtn = document.querySelector(".right-button");
+
+
+rightBtn.addEventListener("click", movingSlider);
+
+// leftBtn.addEventListener("click", (e) => {
+//     if(typeof previousSlides == "undefined") {
+//         movingSlider(e);
+//     } else {
+//         movingSliderBack(e);
+//     };
+// });
+
+sliderItems.forEach((slide, index) => slide.dataset.index = index);
+
+function makeSlidersVisible(arr, previousArr, start, end) {
+    let randomSlide;
+    let visebleSlides = [];
+    for(let i = 0; visebleSlides.length < 3; i++) {
+        randomSlide = arr[Math.floor(Math.random() * (end - start) + start)];
+        if(!visebleSlides.includes(randomSlide)) {
+            if(typeof previousArr == "undefined" ||
+            !previousArr.includes(randomSlide)) {
+                visebleSlides.push(randomSlide);
+            };
+        };
+    };
+    return visebleSlides;
+};
+
+let previousSlides = "undefined";
+
+function movingSlider(event, visebleSlides) {
+    visebleSlides = makeSlidersVisible(sliderItems, previousSlides, 0, sliderItems.length-1);
+    previousSlides = visebleSlides.slice(0);
+    sliderItems.forEach(slide => {
+        visebleSlides.includes(slide)? slide.classList.remove("hidden"): slide.classList.add("hidden");
+    });
+};
+
+// function movingSliderBack(event, visebleSlides) {
+//     debugger;
+//     sliderItems.forEach(slide => {
+//         previousSlides.includes(slide)? slide.classList.remove("hidden"): slide.classList.add("hidden");
+//     });
+
+// }
