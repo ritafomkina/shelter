@@ -243,7 +243,7 @@ h6 {
     z-index: 5;
     transition: 0.3s;
     height: 100%;
-    width: 100%;
+    width: 320px;
     background-color: #292929;
   }
   .popup.open {
@@ -435,6 +435,10 @@ h6 {
 .start-img {
 }
 
+.shadow-display {
+  display: none;
+}
+
 /*------------section-start-adaptive-styles-----------*/
 
 @media (max-width: 1279px) and (min-width: 320px) {
@@ -487,6 +491,14 @@ h6 {
   .start-img img {
     max-width: 260px;
   }
+  .deactivated {
+    pointer-events: none;
+  }
+  .shadow {
+    background-color: rgba(41, 41, 41, 0.6);
+    /* position: ; */
+  }
+
 }
 
 @media (max-width: 767px) and (min-width: 375px) {
