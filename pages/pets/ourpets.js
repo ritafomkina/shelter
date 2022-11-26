@@ -18,8 +18,6 @@ function renderPopup() {
     popup.firstElementChild.firstElementChild.appendChild(headerLink);
     popup.firstElementChild.firstElementChild.appendChild(popupBurger);
     popup.firstElementChild.appendChild(menu);
-    popup.querySelector(".header-logo").classList.add("header-logo-open");
-    popup.querySelector(".header-burger").classList.add("header-burger-open");
 };
 
 function removeMenu() {
@@ -40,12 +38,13 @@ function handleMenuClick(e) {
     popup.classList.toggle("open");
     body.classList.toggle("noscroll");
     shadow.classList.toggle("open");
-
     if(!popup.hasChildNodes()) {
         renderPopup();
     } else {
         removeMenu();
     };
+  popup.querySelector(".header-logo").classList.toggle("header-logo-open");
+  popup.querySelector(".header-burger").classList.toggle("header-burger-open");
 };
 
 burger.addEventListener("click", openBurger);
