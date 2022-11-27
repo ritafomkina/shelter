@@ -268,13 +268,13 @@ h6 {
     max-height: 327px;
   }
 
-  .popup > .nav-link  {
-    font-family: 'Arial';
+  .popup > .nav-link {
+    font-family: "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 160%;
-    color: #CDCDCD;
+    color: #cdcdcd;
   }
   body.noscroll {
     overflow: hidden;
@@ -291,7 +291,7 @@ h6 {
   }
 
   .popupHeaderWrapper {
-    align-self:flex-start;
+    align-self: flex-start;
     display: flex;
     justify-items: space-between;
     margin: 30px 0px 0px 0px;
@@ -301,19 +301,19 @@ h6 {
   }
 
   .popup .nav-link {
-    font-family: 'Arial';
+    font-family: "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 160%;
-    color: #CDCDCD;
+    color: #cdcdcd;
   }
 
   .popup .default-link {
-    color: #FAFAFA;
+    color: #fafafa;
   }
   .popup .nav-link:active {
-    color: #FAFAFA;
+    color: #fafafa;
   }
 }
 
@@ -322,9 +322,6 @@ h6 {
     width: 80%;
   }
 } */
-
-
-
 
 /*-------------main-styles-----------*/
 

@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // Burger menu
 
@@ -9,45 +9,45 @@ let headerLink = document.querySelector("#header-link").cloneNode(1);
 let menu = document.querySelector("#menu").cloneNode(1);
 let startFogging = document.querySelector("#start");
 let body = document.body;
-let popupWrapper = '<div class="wrapper popup-wrapper"><div class="popupHeaderWrapper"></div></div>';
+let popupWrapper =
+  '<div class="wrapper popup-wrapper"><div class="popupHeaderWrapper"></div></div>';
 let popupBurger = document.querySelector("#header-burger").cloneNode(1);
 
-
 function renderPopup() {
-    popup.innerHTML = popupWrapper;
-    popup.firstElementChild.firstElementChild.appendChild(headerLink);
-    popup.firstElementChild.firstElementChild.appendChild(popupBurger);
-    popup.firstElementChild.appendChild(menu);
-};
+  popup.innerHTML = popupWrapper;
+  popup.firstElementChild.firstElementChild.appendChild(headerLink);
+  popup.firstElementChild.firstElementChild.appendChild(popupBurger);
+  popup.firstElementChild.appendChild(menu);
+}
 
 function removeMenu() {
-    let child = popup.firstElementChild;
-    popup.removeChild(child);
-};
+  let child = popup.firstElementChild;
+  popup.removeChild(child);
+}
 
 function handleMenuClick(e) {
-    if (e.target instanceof HTMLAnchorElement) {
-        setTimeout(openBurger, 0, e);
-    }
+  if (e.target instanceof HTMLAnchorElement) {
+    setTimeout(openBurger, 0, e);
   }
+}
 
- function openBurger(event) {
-    // event.preventDefault();
-    event.stopPropagation();
+function openBurger(event) {
+  // event.preventDefault();
+  event.stopPropagation();
 
-    popup.classList.toggle("open");
-    body.classList.toggle("noscroll");
-    shadow.classList.toggle("open");
-    if(!popup.hasChildNodes()) {
-        renderPopup();
-    } else {
-        removeMenu();
-    };
+  popup.classList.toggle("open");
+  body.classList.toggle("noscroll");
+  shadow.classList.toggle("open");
+  if (!popup.hasChildNodes()) {
+    renderPopup();
+  } else {
+    removeMenu();
+  }
   popup.querySelector(".header-logo").classList.toggle("header-logo-open");
   popup.querySelector(".header-burger").classList.toggle("header-burger-open");
-};
+}
 
 burger.addEventListener("click", openBurger);
 popupBurger.addEventListener("click", openBurger);
-shadow.addEventListener('click', openBurger);
-menu.addEventListener('click', handleMenuClick);
+shadow.addEventListener("click", openBurger);
+menu.addEventListener("click", handleMenuClick);
