@@ -65,48 +65,82 @@ const sliderItems = Array.from(slider.children);
 const leftBtn = document.querySelector(".left-button");
 const rightBtn = document.querySelector(".right-button");
 
+function chooseRandomSlides(arr, previousArr, start, end) {
 
-rightBtn.addEventListener("click", movingSlider);
-
-// leftBtn.addEventListener("click", (e) => {
-//     if(typeof previousSlides == "undefined") {
-//         movingSlider(e);
-//     } else {
-//         movingSliderBack(e);
-//     };
-// });
-
-sliderItems.forEach((slide, index) => slide.dataset.index = index);
-
-function makeSlidersVisible(arr, previousArr, start, end) {
     let randomSlide;
     let visebleSlides = [];
+
     for(let i = 0; visebleSlides.length < 3; i++) {
         randomSlide = arr[Math.floor(Math.random() * (end - start) + start)];
         if(!visebleSlides.includes(randomSlide)) {
-            if(typeof previousArr == "undefined" ||
+            if(previousArr == null ||
             !previousArr.includes(randomSlide)) {
                 visebleSlides.push(randomSlide);
             };
         };
     };
+
     return visebleSlides;
 };
 
-let previousSlides = "undefined";
+function makeVisible(arr) {
 
-function movingSlider(event, visebleSlides) {
-    visebleSlides = makeSlidersVisible(sliderItems, previousSlides, 0, sliderItems.length-1);
-    previousSlides = visebleSlides.slice(0);
     sliderItems.forEach(slide => {
-        visebleSlides.includes(slide)? slide.classList.remove("hidden"): slide.classList.add("hidden");
+        arr.includes(slide)? slide.classList.remove("hidden"): slide.classList.add("hidden");
     });
+
 };
 
-// function movingSliderBack(event, visebleSlides) {
-//     debugger;
-//     sliderItems.forEach(slide => {
-//         previousSlides.includes(slide)? slide.classList.remove("hidden"): slide.classList.add("hidden");
-//     });
+let rightBtnPressed, leftBtnPressed;
+let  visibleSlides,  previousSlides, nextSliders;
 
-// }
+function movingSlider(event) {
+
+    visibleSlides = sliderItems.filter(slide => !slide.classList.contains("hidden"));
+
+    rightBtnPressed = rightBtnPressed || false;
+    leftBtnPressed = leftBtnPressed || false;
+
+    if(event.target.classList.contains("left-button")) {
+
+        if (rightBtnPressed == true) {
+
+            makeVisible(previousSlides);
+            previousSlides = visibleSlides.slice(0);
+            visibleSlides = nextSliders.slice(0);
+            leftBtnPressed = true;
+            rightBtnPressed = false;
+
+            return;
+        };
+
+        leftBtnPressed = true;
+        rightBtnPressed = false;
+
+    } else if(event.target.classList.contains("right-button")) {
+
+        if (leftBtnPressed == true) {
+
+            makeVisible(previousSlides);
+            previousSlides = visibleSlides.slice(0);
+            visibleSlides = nextSliders.slice(0);
+            rightBtnPressed = true;
+            leftBtnPressed = false;
+            visibleSlides = previousSlides.slice(0);
+
+            return;
+        };
+
+        rightBtnPressed = true;
+        leftBtnPressed = false;
+
+        };
+
+    nextSliders = chooseRandomSlides(sliderItems, visibleSlides, 0, sliderItems.length-1);
+    makeVisible(nextSliders);
+    previousSlides = visibleSlides.slice(0);
+    visibleSlides = nextSliders.slice(0);
+};
+
+rightBtn.addEventListener("click", movingSlider);
+leftBtn.addEventListener("click", movingSlider);
