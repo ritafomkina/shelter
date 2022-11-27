@@ -616,6 +616,10 @@ h6 {
   transition: 3ms;
 }
 
+.slider-line {
+  display: flex;
+}
+
 /* .slider-button:disabled {
     border: 2px solid #F1CDB3;
     background-color: #F6F6F6;
@@ -630,6 +634,10 @@ h6 {
   background: #ffffff;
   transition: 3ms;
 }
+
+/* .slider-link:nth-child(n+4) {
+  display: none;
+} */
 
 .slider-card {
   max-width: 270px;
@@ -682,6 +690,14 @@ h6 {
   transition: 3ms;
 }
 
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: inline;
+}
+
 /*------------section-pets-adaptive-styles-----------*/
 
 @media (max-width: 1279px) and (min-width: 320px) {
@@ -710,7 +726,7 @@ h6 {
   .slider-space {
     margin-right: 40px;
   }
-  .slider-link:nth-child(4) {
+  .slider-link:nth-child(3) {
     display: none;
   }
 }
@@ -741,7 +757,7 @@ h6 {
   .slider-card {
     margin: 0;
   }
-  .slider-link:nth-child(n + 3) {
+  .slider-link:nth-child(n + 2) {
     display: none;
   }
 }
