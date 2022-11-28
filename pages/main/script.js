@@ -55,7 +55,7 @@ popupBurger.addEventListener("click", openBurger);
 shadow.addEventListener("click", openBurger);
 menu.addEventListener("click", handleMenuClick);
 
-// carousel
+// carousel есть ошибка с nth child
 
 const slider = document.querySelector(".slider-line");
 const sliderItems = Array.from(slider.children);
@@ -72,7 +72,7 @@ function countSlides(width, num) { // как это красиво написа�
     num = 1;
    };
 
-//    sliderItems.forEach((slide, index) => index < num? slide.classList.remove("hidden"): slide.classList.add("hidden"));// не адаптивный
+   sliderItems.map((slide, index) => index < num? slide.classList.add("visible"): slide.classList.remove("visible"));// не адаптивный
 
    return num;
 };
@@ -99,8 +99,8 @@ console.log(visebleSlides);
 function makeVisible(arr) {
   sliderItems.forEach((slide) => {
     arr.includes(slide)
-      ? slide.classList.remove("hidden")
-      : slide.classList.add("hidden");
+      ? slide.classList.add("visible")
+      : slide.classList.remove("visible");
 })
   ;
 }
@@ -110,7 +110,7 @@ let visibleSlides, previousSlides, nextSliders;
 
 function movingSlider(event) {
   visibleSlides = sliderItems.filter(
-    (slide) => !slide.classList.contains("hidden")
+    (slide) => slide.classList.contains("visible")
   );
 
   rightBtnPressed = rightBtnPressed || false;
