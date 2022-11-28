@@ -55,18 +55,36 @@ popupBurger.addEventListener("click", openBurger);
 shadow.addEventListener("click", openBurger);
 menu.addEventListener("click", handleMenuClick);
 
-// carousel
+// carousel есть ошибка с nth child
 
 const slider = document.querySelector(".slider-line");
 const sliderItems = Array.from(slider.children);
 const leftBtn = document.querySelector(".left-button");
 const rightBtn = document.querySelector(".right-button");
 
+
+function countSlides(width, num) { // как это красиво написать
+   if (width >= 1280){
+    num = 3;
+   } else if (width >= 768 && width < 1280) {
+    num = 2;
+   } else if(width < 768) {
+    num = 1;
+   };
+
+   sliderItems.map((slide, index) => index < num? slide.classList.add("visible"): slide.classList.remove("visible"));// не адаптивный
+
+   return num;
+};
+
+let numOfSlides = countSlides(window.screen.width);
+console.log(numOfSlides);
+
 function chooseRandomSlides(arr, previousArr, start, end) {
   let randomSlide;
   let visebleSlides = [];
 
-  for (let i = 0; visebleSlides.length < 3; i++) {
+  for (let i = 0; visebleSlides.length < numOfSlides; i++) {
     randomSlide = arr[Math.floor(Math.random() * (end - start) + start)];
     if (!visebleSlides.includes(randomSlide)) {
       if (previousArr == null || !previousArr.includes(randomSlide)) {
@@ -74,16 +92,17 @@ function chooseRandomSlides(arr, previousArr, start, end) {
       }
     }
   }
-
+console.log(visebleSlides);
   return visebleSlides;
 }
 
 function makeVisible(arr) {
   sliderItems.forEach((slide) => {
     arr.includes(slide)
-      ? slide.classList.remove("hidden")
-      : slide.classList.add("hidden");
-  });
+      ? slide.classList.add("visible")
+      : slide.classList.remove("visible");
+})
+  ;
 }
 
 let rightBtnPressed, leftBtnPressed;
@@ -91,7 +110,7 @@ let visibleSlides, previousSlides, nextSliders;
 
 function movingSlider(event) {
   visibleSlides = sliderItems.filter(
-    (slide) => !slide.classList.contains("hidden")
+    (slide) => slide.classList.contains("visible")
   );
 
   rightBtnPressed = rightBtnPressed || false;
@@ -133,9 +152,12 @@ function movingSlider(event) {
     sliderItems.length - 1
   );
   makeVisible(nextSliders);
+  console.log(nextSliders);
   previousSlides = visibleSlides.slice(0);
   visibleSlides = nextSliders.slice(0);
 }
 
 rightBtn.addEventListener("click", movingSlider);
 leftBtn.addEventListener("click", movingSlider);
+
+//  убрать из сss nth child

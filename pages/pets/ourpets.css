@@ -372,13 +372,13 @@ h6 {
   padding: 15px 0px;
 }
 
-.slider-link:hover button {
+.slider-item:hover button {
   background: #fddcc4;
   border: 0;
   transition: 3ms;
 }
 
-.slider-link:hover div {
+.slider-item:hover div {
   background: #ffffff;
   transition: 3ms;
 }
@@ -460,7 +460,7 @@ h6 {
     padding: 0;
     padding: 0px 64px;
   }
-  .slider-link:nth-child(n + 7) {
+  .slider-item:nth-child(n + 7) {
     display: none;
   }
   .nav-container {
@@ -469,7 +469,7 @@ h6 {
 }
 
 @media (max-width: 767px) and (min-width: 320px) {
-  .slider-link:nth-child(n + 4) {
+  .slider-item:nth-child(n + 4) {
     display: none;
   }
   .section {
