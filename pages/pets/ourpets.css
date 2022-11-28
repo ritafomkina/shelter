@@ -139,6 +139,7 @@ h6 {
   font-weight: 400;
   font-size: 15px;
   line-height: 160%;
+  /* margin: 4px 0px 0px 0px; */
 }
 
 .nav-link::after {

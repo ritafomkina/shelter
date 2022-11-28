@@ -163,12 +163,6 @@ h6 {
   transform-origin: bottom left;
 }
 
-/* .default-link::after {
-  color: #fafafa;
-  transition: 3ms;
-  border-bottom: 3px solid #f1cdb3;
-} */
-
 .default-link::after {
   content: "";
   position: absolute;
@@ -180,11 +174,11 @@ h6 {
   background-color: #f1cdb3;
 }
 
-.nav-link:active {
+/* .nav-link:active {
   color: #fafafa;
   transition: 3ms;
   /* border-bottom: 3px solid #f1cdb3; */
-}
+} */
 
 /*-------------header-adaptive-styles-----------*/
 
