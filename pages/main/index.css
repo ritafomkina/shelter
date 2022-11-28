@@ -723,6 +723,10 @@ h6 {
   .slider-space {
     margin-right: 40px;
   }
+
+  .hidden-on-tablet {
+    display: none;
+  }
   .slider-link:nth-child(3) {
     display: none;
   }
@@ -754,9 +758,16 @@ h6 {
   .slider-card {
     margin: 0;
   }
-  .slider-link:nth-child(n + 2) {
+  /* .hidden-on-mobile {
+    display: none;
+  } */
+  .slider-link:nth-child(n+2) {
     display: none;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 /*-------------section help------------*/
