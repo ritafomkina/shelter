@@ -72,7 +72,7 @@ function countSlides(width, num) { // как это красиво написа�
     num = 1;
    };
 
-   sliderItems.map((slide, index) => index < num? slide.classList.add("visible"): slide.classList.remove("visible"));// не адаптивный
+  //  sliderItems.map((slide, index) => index < num? slide.classList.add("visible"): slide.classList.remove("visible"));// не адаптивный
 
    return num;
 };
