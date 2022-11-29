@@ -109,6 +109,9 @@ let rightBtnPressed, leftBtnPressed;
 let visibleSlides, previousSlides, nextSliders;
 
 function movingSlider(event) {
+
+  leftBtn.disabled = false;
+
   visibleSlides = sliderItems.filter(
     (slide) => slide.classList.contains("visible")
   );
