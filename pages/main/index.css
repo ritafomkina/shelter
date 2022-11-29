@@ -676,17 +676,14 @@ h6 {
   background: #fddcc4;
   transition: 3ms;
 }
-/* .hidden {
-  display: none;
-} */
 
-.slider-item {
+.hidden {
   display: none;
 }
+
 .visible {
   display: block;
 }
-
 /*------------section-pets-adaptive-styles-----------*/
 
 @media (max-width: 1279px) and (min-width: 320px) {
@@ -714,9 +711,6 @@ h6 {
   }
   .slider-space {
     margin-right: 40px;
-  }
-  .slider-item:nth-child(3) {
-    display: none;
   }
 }
 
@@ -746,10 +740,6 @@ h6 {
   .slider-card {
     margin: 0;
   }
-  .slider-item:nth-child(n+2) {
-    display: none;
-  }
-
 }
 
 /*-------------section help------------*/
