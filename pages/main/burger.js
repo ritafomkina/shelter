@@ -25,12 +25,6 @@ function removeMenu() {
   popup.removeChild(child);
 }
 
-function handleMenuClick(e) {
-  if (e.target instanceof HTMLAnchorElement) {
-    setTimeout(openBurger, 0, e);
-  }
-}
-
 function openBurger(event) {
   // event.preventDefault();
   event.stopPropagation();
@@ -49,6 +43,4 @@ function openBurger(event) {
 }
 
 burger.addEventListener("click", openBurger);
-popupBurger.addEventListener("click", openBurger);
 shadow.addEventListener("click", openBurger);
-menu.addEventListener("click", handleMenuClick);
