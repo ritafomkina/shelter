@@ -1,34 +1,32 @@
 "use strict";
 
-const slider = document.querySelector(".slider-line");
-const sliderItems = Array.from(slider.children);
+const slider = document.querySelector(".slider-container");
 const leftBtn = document.querySelector(".left-button");
 const rightBtn = document.querySelector(".right-button");
 
-function countSlides(width) { // как это красиво написать
+function createCardContainer(img, name) {
+  const cardContainer = document.createElement('div');
+  cardContainer.className = "card-container";
+  cardContainer.innerHTML = `<img src="${img}" alt="cat">
+<p class="card-name">${name}</p>`;
 
-  let num;
+  function createButton() {
+    const cardButton = document.createElement('button');
+    cardButton.className = "card-button";
+    cardButton.innerHTML = "Learn more";
+    return cardButton;
+  }
 
-  if (width >= 1280){
-   num = 3;
-  } else if (width >= 768 && width < 1280) {
-   num = 2;
-  } else if(width < 768) {
-   num = 1;
-  };
+  cardContainer.append(createButton());
 
-  sliderItems.map((slide, index) => index < num? slide.classList.add("visible"): slide.classList.remove("visible"));// не адаптивный
+  return cardContainer;
+}
 
-  return num;
-};
-
-let numOfSlides = countSlides(window.screen.width);
-
-function chooseRandomSlides(arr, previousArr, start, end) {
+function chooseRandomPets(arr, previousArr, start, end) {
   let randomSlide;
   let visebleSlides = [];
 
-  for (let i = 0; visebleSlides.length < numOfSlides; i++) {
+  for (let i = 0; visebleSlides.length < 3; i++) {
     randomSlide = arr[Math.floor(Math.random() * (end - start) + start)];
     if (!visebleSlides.includes(randomSlide)) {
       if (previousArr == null || !previousArr.includes(randomSlide)) {
@@ -40,27 +38,18 @@ function chooseRandomSlides(arr, previousArr, start, end) {
 }
 
 function makeVisible(arr) {
-  sliderItems.forEach((slide) => {
-    !arr.includes(slide)
-    ? slide.classList.remove("visible")
-    : slide.classList.add("visible");
+  arr.forEach(cards => {
+    slider.prepend(cards)
   });
 }
 
-function changeNumOfSlides(event) {
-  numOfSlides = countSlides(event.target.outerWidth);
- };
-
 let rightBtnPressed, leftBtnPressed;
-let visibleSlides, previousSlides, nextSliders;
+let visibleCards, previousCards, nextCards;
+let visiblePets, previousPets, nextPets;
 
 function movingSlider(event) {
 
   leftBtn.disabled = false;
-
-  visibleSlides = sliderItems.filter(
-    (slide) => slide.classList.contains("visible")
-  );
 
   rightBtnPressed = rightBtnPressed || false;
   leftBtnPressed = leftBtnPressed || false;
@@ -94,18 +83,21 @@ function movingSlider(event) {
     leftBtnPressed = false;
   }
 
-  nextSliders = chooseRandomSlides(
-    sliderItems,
-    visibleSlides,
+  nextPets = chooseRandomPets(
+    petsArr,
+    previousPets,
     0,
-    sliderItems.length - 1
+    13
   );
-  makeVisible(nextSliders);
 
-  previousSlides = visibleSlides.slice(0);
-  visibleSlides = nextSliders.slice(0);
+  nextCards = nextPets.map(pet => createCardContainer(pet.img, pet.name));
+
+  makeVisible(nextCards);
+
+  visiblePets = nextPets.slice(0);
+  previousPets = visiblePets.slice(0);
 }
 
 rightBtn.addEventListener("click", movingSlider);
 leftBtn.addEventListener("click", movingSlider);
-window.addEventListener("resize", changeNumOfSlides);
+// window.addEventListener("resize", changeNumOfSlides);

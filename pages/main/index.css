@@ -607,26 +607,12 @@ h6 {
   transition: 3ms;
 }
 
-.slider-line {
+.slider-container {
   display: flex;
+  justify-content: space-between;
 }
 
-/* .slider-button:disabled {
-    border: 2px solid #F1CDB3;
-    background-color: #F6F6F6;
-} в требовании к заданию сказано сделать кнопку disabled, а в критериях оценки - интерактивной в любом случае. */
-
-.slider-item:hover button {
-  background: #fddcc4;
-  border: 0;
-}
-
-.slider-item:hover div {
-  background: #ffffff;
-  transition: 3ms;
-}
-
-.slider-card {
+.card-container {
   max-width: 270px;
   height: 435px;
   row-gap: 30px;
@@ -637,6 +623,21 @@ h6 {
   background: #fafafa;
   border-radius: 9px;
   margin: 0 45px;
+}
+.slider-button:disabled {
+    border: 2px solid #F1CDB3;
+    background-color: #F6F6F6;
+}
+
+.card-container:hover button {
+  background: #fddcc4;
+  border: 0;
+}
+
+.card-container:hover {
+  background: #ffffff;
+  transition: 3ms;
+  cursor: pointer;
 }
 
 .card-name {
@@ -676,14 +677,17 @@ h6 {
   background: #fddcc4;
   transition: 3ms;
 }
+.card-container:nth-child(n+4) {
+  display: none;
+}
 
-.hidden {
+/* .hidden {
   display: none;
 }
 
 .visible {
   display: block;
-}
+} */
 /*------------section-pets-adaptive-styles-----------*/
 
 @media (max-width: 1279px) and (min-width: 320px) {
@@ -693,6 +697,9 @@ h6 {
   }
   .about-img {
     order: 1;
+  }
+  .card-container {
+    margin: 0px;
   }
 }
 
@@ -706,11 +713,14 @@ h6 {
   .slider-button:last-child {
     margin: 0px 0px 0px 12px;
   }
-  .slider-card {
-    margin: 0px;
-  }
-  .slider-space {
+  /* .slider-space {
     margin-right: 40px;
+  } */
+  .card-container:nth-child(1) {
+    margin-right: 40px;
+  }
+  .card-container:nth-child(n+3) {
+    display: none;
   }
 }
 
@@ -737,8 +747,8 @@ h6 {
     order: 1;
     margin: 0px 40px;
   }
-  .slider-card {
-    margin: 0;
+  .card-container:nth-child(n+2) {
+    display: none;
   }
 }
 
