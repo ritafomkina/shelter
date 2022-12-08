@@ -7,7 +7,7 @@ const rightBtn = document.querySelector(".right-button");
 function createCardContainer(img, name) {
   const cardContainer = document.createElement('div');
   cardContainer.className = "card-container";
-  cardContainer.innerHTML = `<img src="${img}" alt="cat">
+  cardContainer.innerHTML = `<img class="pets-img" src="${img}" alt="cat">
 <p class="card-name">${name}</p>`;
 
   function createButton() {
@@ -23,31 +23,53 @@ function createCardContainer(img, name) {
 }
 
 function chooseRandomPets(arr, previousArr, start, end) {
-  let randomSlide;
-  let visebleSlides = [];
+  let randomPets;
+  let viseblePets = [];
 
-  for (let i = 0; visebleSlides.length < 3; i++) {
-    randomSlide = arr[Math.floor(Math.random() * (end - start) + start)];
-    if (!visebleSlides.includes(randomSlide)) {
-      if (previousArr == null || !previousArr.includes(randomSlide)) {
-        visebleSlides.push(randomSlide);
+  for (let i = 0; viseblePets.length < 3; i++) {
+    randomPets = arr[Math.floor(Math.random() * (end - start) + start)];
+    if (!viseblePets.includes(randomPets) && !previousArr.includes(randomPets)) {
+        viseblePets.push(randomPets);
       }
     }
-  }
-  return visebleSlides;
+  return viseblePets;
 }
 
 function makeVisible(arr) {
   arr.forEach(cards => {
-    slider.prepend(cards)
+    slider.append(cards)
   });
 }
 
+function deletePreviousEls(arr) {
+  Array.from(arr).forEach(card => card.remove());
+}
+
+function getVisiblePets(arr, petsArr) {
+  let tmp = Array.from(arr).map(el => el.textContent);
+  let visiblePets = [];
+  tmp.forEach(name => {
+    petsArr.forEach(pet => {
+      if(pet.name == name) visiblePets.push(pet);
+    });
+  });
+  return visiblePets;
+}
+
 let rightBtnPressed, leftBtnPressed;
-let visibleCards, previousCards, nextCards;
-let visiblePets, previousPets, nextPets;
+let previousCards, nextCards;
+let visiblePets, nextPets;
+let visiblePar;
+let visibleCards;
+let previousPets;
+
+visibleCards = document.getElementsByClassName("card-container");
+visiblePar = document.getElementsByClassName("card-name");
+
 
 function movingSlider(event) {
+
+  visiblePets = getVisiblePets(visiblePar, petsArr);
 
   leftBtn.disabled = false;
 
@@ -56,9 +78,12 @@ function movingSlider(event) {
 
   if (event.target.classList.contains("left-button")) {
     if (rightBtnPressed == true) {
-      makeVisible(previousSlides);
-      previousSlides = visibleSlides.slice(0); // тут надо бы переписаь
-      visibleSlides = nextSliders.slice(0);
+      previousCards = previousPets.map(pet => createCardContainer(pet.img, pet.name));
+      deletePreviousEls(visibleCards);
+      makeVisible(previousCards);
+      previousPets = visiblePets.slice(0);
+      visiblePets = nextPets.slice(0);
+
       leftBtnPressed = true;
       rightBtnPressed = false;
 
@@ -67,14 +92,16 @@ function movingSlider(event) {
 
     leftBtnPressed = true;
     rightBtnPressed = false;
+
   } else if (event.target.classList.contains("right-button")) {
     if (leftBtnPressed == true) {
-      makeVisible(previousSlides);
-      previousSlides = visibleSlides.slice(0);
-      visibleSlides = nextSliders.slice(0);
+      previousCards = previousPets.map(pet => createCardContainer(pet.img, pet.name));
+      deletePreviousEls(visibleCards);
+      makeVisible(previousCards);
+      previousPets = visiblePets.slice(0);
+      visiblePets = nextPets.slice(0);
       rightBtnPressed = true;
       leftBtnPressed = false;
-      visibleSlides = previousSlides.slice(0);
 
       return;
     }
@@ -85,19 +112,17 @@ function movingSlider(event) {
 
   nextPets = chooseRandomPets(
     petsArr,
-    previousPets,
+    visiblePets,
     0,
-    13
+    14
   );
 
   nextCards = nextPets.map(pet => createCardContainer(pet.img, pet.name));
 
+  deletePreviousEls(visibleCards);
   makeVisible(nextCards);
-
-  visiblePets = nextPets.slice(0);
   previousPets = visiblePets.slice(0);
 }
 
 rightBtn.addEventListener("click", movingSlider);
 leftBtn.addEventListener("click", movingSlider);
-// window.addEventListener("resize", changeNumOfSlides);

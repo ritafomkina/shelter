@@ -5,10 +5,10 @@ function Pet (name, img, type, breed) {
     this.breed = breed;
 }
 
-let arrOfNames = ['Katrine', 'Jennifer', 'Woody', 'Sophia', 'Timmy', 'Scarlet', 'Freddie', 'Sandy', 'Laura', 'Loki', 'Gloria', 'Ann', 'Baby', 'Jarry', 'Tom'];
+let arrOfNames = ['Katrine', 'Jennifer', 'Woody', 'Sophia', 'Timmy', 'Scarlet', 'Freddie', 'Sandy', 'Laura', 'Loki', 'Gloria', 'Ann', 'Baby', 'Jarry'];
 let petsArr = [];
-
-for(let i = 1; i <= 13; i++ ) {
+console.log(petsArr);
+for(let i = 0; i <= 13; i++ ) {
     petsArr.push(
         new Pet(arrOfNames[i], `../../assets/pets/pets_${i}.png`, 'dog', 'simple')
     )
