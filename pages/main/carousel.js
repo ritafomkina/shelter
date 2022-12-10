@@ -57,14 +57,13 @@ function getVisiblePets(arr, petsArr) {
 }
 
 let rightBtnPressed, leftBtnPressed;
-let previousCards, nextCards;
-let visiblePets, nextPets;
+let visibleCards, previousCards, nextCards;
+let visiblePets, previousPets, nextPets;
 let visiblePar;
-let visibleCards;
-let previousPets;
 
 visibleCards = document.getElementsByClassName("card-container");
 visiblePar = document.getElementsByClassName("card-name");
+// let previousCardsArr = Array.from(visibleCards).slice(0);
 
 
 function movingSlider(event) {
@@ -122,6 +121,8 @@ function movingSlider(event) {
   deletePreviousEls(visibleCards);
   makeVisible(nextCards);
   previousPets = visiblePets.slice(0);
+
+  // previousCardsArr = [].concat(Array.from(previousCards).filter(card => !previousCardsArr.includes(card)));
 }
 
 rightBtn.addEventListener("click", movingSlider);
