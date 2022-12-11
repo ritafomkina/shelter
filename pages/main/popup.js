@@ -1,12 +1,16 @@
 const cardContainer = document.querySelector(".card-container");
 const petPupup = document.querySelector(".pet-popup");
 const pupupShadow = document.querySelector(".popup-shadow");
-
+let closeIcon;
 
 function renderPetPopup(pet) {
   const petImg = document.createElement("img");
   petImg.classList.add("pet-img");
   petPupup.prepend(petImg);
+
+  closeIcon = document.createElement("span");
+  closeIcon.classList.add("close-icon");
+  petImg.before(closeIcon);
 
   const petContent = document.createElement("div");
   petContent.classList.add("pet-content");
@@ -76,6 +80,9 @@ function openPetPupup(event) {
   } else {
     removePetPopup();
   }
+
+  closeIcon.addEventListener("click", openPetPupup);
+
 };
 
 function getNewCards () {

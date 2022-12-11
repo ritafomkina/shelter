@@ -40,7 +40,10 @@ function openBurger(event) {
   } else {
     removeMenu();
   }
+
+  popup.querySelector(".header-burger").classList.add("header-burger-open");
 }
 
 burger.addEventListener("click", openBurger);
+popupBurger.addEventListener("click", openBurger);
 shadow.addEventListener("click", openBurger);

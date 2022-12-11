@@ -43,8 +43,9 @@ function openBurger(event) {
   } else {
     removeMenu();
   }
-  popup.querySelector(".header-logo").classList.toggle("header-logo-open");
-  popup.querySelector(".header-burger").classList.toggle("header-burger-open");
+
+  popup.querySelector(".header-logo").classList.add("header-logo-open");
+  popup.querySelector(".header-burger").classList.add("header-burger-open");
 }
 
 burger.addEventListener("click", openBurger);
