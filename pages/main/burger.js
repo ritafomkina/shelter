@@ -34,6 +34,7 @@ function openBurger(event) {
   body.classList.toggle("noscroll");
   startLogoLink.classList.toggle("deactivated");
   notOnlyLink.classList.toggle("deactivated");
+  burger.classList.toggle("header-burger-open");
 
   if (!popup.hasChildNodes()) {
     renderPopup();

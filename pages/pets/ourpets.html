@@ -51,88 +51,74 @@
             <h3 class="our-friends-heading">
               Our friends who<br>are looking for a house
             </h3>
-            <div class="cards-container">
-              <div class="slider-item">
-                <div class="slider-card">
-                  <img
-                    src="../../assets/our-pets-page/pets-katrine.png"
+            <div class="slider-container">
+              <div class="card-container">
+                  <img class="pets-img"
+                    src="../../assets/pets/pets_0.png"
                     alt="cat katrine">
                   <p class="card-name">Katrine</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
-              <div class="slider-item">
-                <div class="slider-card">
-                  <img
-                    src="../../assets/our-pets-page/pets-jennifer.png"
+              <div class="card-container">
+                  <img class="pets-img"
+                    src="../../assets/pets/pets_1.png"
                     alt="dog jennifer">
                   <p class="card-name">Jennifer</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
-              <div class="slider-item">
-                <div class="slider-card">
-                  <img
-                    src="../../assets/our-pets-page/pets-woody.png"
+              <div class="card-container">
+                  <img class="pets-img"
+                    src="../../assets/pets/pets_2.png"
                     alt="dog woody">
                   <p class="card-name">Woody</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
-              <div class="slider-item">
-                <div class="slider-card">
-                  <img
-                    src="../../assets/our-pets-page/pets-sophia.png"
+              <div class="card-container">
+                  <img class="pets-img"
+                    src="../../assets/pets/pets_3.png"
                     alt="dog sophia">
                   <p class="card-name">Sophia</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
-              <div class="slider-item">
-                <div class="slider-card">
-                  <img
-                    src="../../assets/our-pets-page/pets-timmy.png"
+              <div class="card-container">
+                  <img class="pets-img"
+                    src="../../assets/pets/pets_4.png"
                     alt="dog timmy">
                   <p class="card-name">Timmy</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
-              <div class="slider-item">
-                <div class="slider-card">
-                  <img
-                    src="../../assets/our-pets-page/pets-charly.png"
+              <div class="card-container">
+                  <img class="pets-img"
+                    src="../../assets/pets/pets_5.png"
                     alt="dog charly">
                   <p class="card-name">Charly</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
-              <div class="slider-item">
-                <div class="slider-card">
+              <div class="card-container">
                   <img
-                    src="../../assets/our-pets-page/pets-scarlet.png"
+                    src="../../assets/pets/pets_6.png"
                     alt="dog scarlet">
                   <p class="card-name">Scarlett</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
-              <div class="slider-item">
-                <div class="slider-card">
+              <div class="card-container">
                   <img
-                    src="../../assets/our-pets-page/pets-freddie.png"
+                    src="../../assets/pets/pets_7.png"
                     alt="dog freddie">
                   <p class="card-name">Freddie</p>
                   <button class="card-button">Learn more</button>
-                </div>
               </div>
             </div>
             <div class="nav-container">
-              <button class="pets-button disabled-button">&lt;&lt;</button>
-              <button class="pets-button disabled-button">&lt;</button>
-              <div class="pets-button">1</div>
-              <button class="pets-button">></button>
-              <button class="pets-button">>></button>
+              <button class="pets-button to-beggin-btn" id="to-beggin-btn" disabled>&lt;&lt;</button>
+              <button class="pets-button to-left-btn" id="to-left" disabled>&lt;</button>
+              <div class="page-num" id="page">1</div>
+              <button class="pets-button to-right-btn" id="to-right">></button>
+              <button class="pets-button to-end-btn" id="to-end-btn">>></button>
             </div>
           </div>
+          <div class="pet-popup"></div>
+          <div class="popup-shadow"></div>
         </section>
       </main>
       <footer class="footer" id="contacts">
@@ -161,6 +147,9 @@
         </div>
       </footer>
     </div>
-    <script src="ourpets.js"></script>
+    <script src="../main/allPets.js"></script>
+    <script src="ourPersBurger.js"></script>
+    <script src="ourPetsPopup.js"></script>
+    <script src="ourPetsPagination.js"></script>
   </body>
 </html>
