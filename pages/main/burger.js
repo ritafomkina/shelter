@@ -29,15 +29,17 @@ function openBurger(event) {
   // event.preventDefault();
   event.stopPropagation();
 
-  popup.classList.toggle("open");
   shadow.classList.toggle("open");
   body.classList.toggle("noscroll");
   startLogoLink.classList.toggle("deactivated");
   notOnlyLink.classList.toggle("deactivated");
+  burger.classList.toggle("header-burger-open");
 
   if (!popup.hasChildNodes()) {
     renderPopup();
+    popup.classList.add("open");
   } else {
+    popup.classList.remove("open");
     removeMenu();
   }
 

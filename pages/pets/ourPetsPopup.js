@@ -52,9 +52,9 @@ function renderPetPopup(pet) {
      petDesc.innerHTML = pet.description;
 
      infoItems[0].innerHTML = "<b>Age:</b>" + "&nbsp;" + pet.age;
-     infoItems[2].innerHTML = "<b>Diseases:</b>" + "&nbsp;" + pet.diseases.join(", ");
-     infoItems[1].innerHTML = "<b>Inoculations:</b>" + "&nbsp;" + pet.inoculations.join(", ");
-     infoItems[3].innerHTML = "<b>Parasites:</b>" + "&nbsp;" + pet.parasites.join(", ");
+     infoItems[2].innerHTML = "<b>Diseases:</b>" + "&nbsp;" + pet.diseases;
+     infoItems[1].innerHTML = "<b>Inoculations:</b>" + "&nbsp;" + pet.inoculations;
+     infoItems[3].innerHTML = "<b>Parasites:</b>" + "&nbsp;" + pet.parasites;
 };
 
 

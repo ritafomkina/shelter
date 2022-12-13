@@ -94,7 +94,7 @@ const petsArr = [
         "breed": "Hairy",
         "description": "This cute hairy girl is four years old and she likes adults and kids. She isn’t fond of many other dogs, so she might do best in a single dog home.",
         "age": "4 years",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "inoculations": ["leptospirosis"],
         "diseases": ["deafness", "blindness"],
         "parasites": ["lice", "fleas"]
     },
@@ -105,7 +105,7 @@ const petsArr = [
         "breed": "Сolly",
         "description": "Border Collies are highly intelligent and highly trainable and are superstars at canine activities such as herding, obedience, and agility.",
         "age": "2 years",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "inoculations": ["leptospirosis"],
         "diseases": ["deafness", "blindness"],
         "parasites": ["lice", "fleas"]
     },
@@ -116,7 +116,7 @@ const petsArr = [
         "breed": "British Shorthair",
         "description": "The British Shorthair is a very pleasant cat to have as a companion. She is easy going and placid. The British is a fiercely loyal, loving cat and will attach herself to every one of her family members.",
         "age": "2 years",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "inoculations": ["leptospirosis"],
         "diseases": ["none"],
         "parasites": ["lice", "fleas"]
     },
@@ -127,7 +127,7 @@ const petsArr = [
         "breed": "Exotic Shorthair",
         "description": "Exotic shorthair cats are a medium-sized breed with beautiful round heads, eyes, and bodies. Most will tip the scales between 10–12 pounds. Exotic shorthairs are a quiet and curious breed that are a bit more active than their long-haired cousins.",
         "age": "1 year",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "inoculations": ["leptospirosis"],
         "diseases": ["none"],
         "parasites": ["lice", "fleas"]
     },
@@ -138,7 +138,7 @@ const petsArr = [
         "breed": "Yorkshire Terrier",
         "description": "The Yorkshire terrier is energetic, feisty and domineering, but also affectionate. It is considered a good apartment dog, but it can be stubborn with house training.",
         "age": "3 years",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "inoculations": ["leptospirosis"],
         "diseases": ["none"],
         "parasites": ["lice", "fleas"]
     },
@@ -149,7 +149,7 @@ const petsArr = [
         "breed": "Pembroke Welsh Corgi",
         "description": "Built long and low, Pembrokes are surprisingly quick and agile. They can be red, sable, fawn, and black and tan, with or without white markings.",
         "age": "1 year",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "inoculations": ["leptospirosis"],
         "diseases": ["none"],
         "parasites": ["lice", "fleas"]
     }

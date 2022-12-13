@@ -1,6 +1,5 @@
 "use strict";
 
-// Burger menu
 
 let burger = document.querySelector("#header-burger");
 let popup = document.querySelector("#popup");
@@ -25,19 +24,13 @@ function removeMenu() {
   popup.removeChild(child);
 }
 
-function handleMenuClick(e) {
-  if (e.target instanceof HTMLAnchorElement) {
-    setTimeout(openBurger, 0, e);
-  }
-}
-
 function openBurger(event) {
-  // event.preventDefault();
   event.stopPropagation();
 
   popup.classList.toggle("open");
   body.classList.toggle("noscroll");
   shadow.classList.toggle("open");
+  burger.classList.toggle("header-burger-open");
   if (!popup.hasChildNodes()) {
     renderPopup();
   } else {
@@ -51,4 +44,3 @@ function openBurger(event) {
 burger.addEventListener("click", openBurger);
 popupBurger.addEventListener("click", openBurger);
 shadow.addEventListener("click", openBurger);
-menu.addEventListener("click", handleMenuClick);

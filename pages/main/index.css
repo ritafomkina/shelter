@@ -210,15 +210,12 @@ h6 {
     width: 30px;
     height: 22px;
     cursor: pointer;
-  }
-  .header-burger:hover{
-    transform: rotate(90deg);
-    transition: 1.5s;
+    transition: 1s;
   }
   .header-burger-open {
     rotate: 90deg;
+    transition: 1s;
   }
-
   .header-burger span {
     position: absolute;
     background-color: #f1cdb3;
@@ -242,16 +239,6 @@ h6 {
   .header-burger::after {
     bottom: 0;
   }
-  .header-burger-open:hover {
-    transform: rotate(90deg);
-    transition: 1.5s;
-  }
-  /* .header-burger:active{
-    animation-name: rotate-burger;
-    animation-duration: .5s;
-  } */
-
-
   .shadow {
     position: fixed;
     top: 0;
@@ -267,7 +254,6 @@ h6 {
     right: -100%;
     z-index: 5;
     transition: 1s;
-    /* transition-duration: .4s; */
     height: 100%;
     width: 320px;
     background-color: #292929;
@@ -408,6 +394,7 @@ h6 {
 
 .section-start {
   position: relative;
+  max-height: 908px;
   padding: 180px 0px 0px 0px;
   background-image: url(../../assets/background/start-screen-gradient-background.png),
     url(../../assets/background/start-screen-background.png);
@@ -420,7 +407,7 @@ h6 {
 }
 
 .start-content {
-  row-gap: 42px;
+  row-gap: 41px;
   margin: 163px 42px 243px 0px;
 }
 
@@ -473,6 +460,9 @@ h6 {
 }
 
 @media (max-width: 1279px) and (min-width: 768px) {
+  .section-start {
+    max-height: 1165px;
+  }
   .start-wrapper {
     flex-direction: column;
     row-gap: 100px;
@@ -630,6 +620,12 @@ h6 {
   cursor: pointer;
 }
 
+
+.left-button:disabled {
+  border: 2px solid #cdcdcd;
+  /* filter: invert(90%) sepia(1%) saturate(19%) hue-rotate(333deg) brightness(98%) contrast(81%); */
+}
+
 .slider-button:hover {
   background-color: #fddcc4;
   border: 0;
@@ -653,14 +649,12 @@ h6 {
   border-radius: 9px;
   margin: 0 45px;
 }
-.slider-button:disabled {
-    border: 2px solid #F1CDB3;
-    background-color: #F6F6F6;
-}
 
 .card-container:hover button {
   background: #fddcc4;
   border: 0;
+  transition: 3ms;
+  cursor: pointer;
 }
 
 .card-container:hover {
@@ -791,6 +785,7 @@ color: #000000;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+row-gap: 20px;
 }
 
 .pet-header{
@@ -872,8 +867,20 @@ background: #F1CDB3;
   .card-container:nth-child(n+3) {
     display: none;
   }
+  .pet-popup-open {
+    width: 630px;
+    height: 350px;
+  }
+  .pet-content {
+    margin: 10px 0px 38px 5px;
+  }
+  .pet-desc {
+    font-size: 13px;
+  }
+  .pet-addInfo {
+  row-gap: 6px;
+  }
 }
-
 @media (max-width: 767px) and (min-width: 320px) {
   .pets-wrapper {
     max-height: 707px;
