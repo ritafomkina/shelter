@@ -394,6 +394,7 @@ h6 {
 
 .section-start {
   position: relative;
+  max-height: 908px;
   padding: 180px 0px 0px 0px;
   background-image: url(../../assets/background/start-screen-gradient-background.png),
     url(../../assets/background/start-screen-background.png);
@@ -406,7 +407,7 @@ h6 {
 }
 
 .start-content {
-  row-gap: 42px;
+  row-gap: 41px;
   margin: 163px 42px 243px 0px;
 }
 
@@ -459,6 +460,9 @@ h6 {
 }
 
 @media (max-width: 1279px) and (min-width: 768px) {
+  .section-start {
+    max-height: 1165px;
+  }
   .start-wrapper {
     flex-direction: column;
     row-gap: 100px;
@@ -616,6 +620,12 @@ h6 {
   cursor: pointer;
 }
 
+
+.left-button:disabled {
+  border: 2px solid #cdcdcd;
+  /* filter: invert(90%) sepia(1%) saturate(19%) hue-rotate(333deg) brightness(98%) contrast(81%); */
+}
+
 .slider-button:hover {
   background-color: #fddcc4;
   border: 0;
@@ -638,10 +648,6 @@ h6 {
   background: #fafafa;
   border-radius: 9px;
   margin: 0 45px;
-}
-.slider-button:disabled {
-    border: 2px solid #F1CDB3;
-    background-color: #F6F6F6;
 }
 
 .card-container:hover button {

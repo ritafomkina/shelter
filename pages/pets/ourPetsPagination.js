@@ -12,14 +12,21 @@ const petsContent = petsArr.slice(0, 8);
 let visibleCards = document.getElementsByClassName("card-container");
 let visiblePar = document.getElementsByClassName("card-name");
 
+function countNumberOf(width, n, p) {
+if(width >= 1280) { n = 6, p = 8 };
+if(width < 1280 && width >= 768) { n = 8, p = 6 };
+if(width < 768) { n = 16, p = 3 };
+return [n, p];
+}
+
 function createRandomArr(arr) {
   let ourPetsMatrix = [];
 
-  while (ourPetsMatrix.length < 6) {
+  while (ourPetsMatrix.length < number[0]) {
     let previousArr = [];
 
-    while (previousArr.length < 8) {
-      let el = arr[Math.floor(Math.random() * (7 - 0 + 1) + 0)];
+    while (previousArr.length < number[1]) {
+      let el = arr[Math.floor(Math.random() * number[1])];
 
       if (!previousArr.includes(el)) previousArr.push(el);
     }
@@ -69,6 +76,9 @@ function getVisiblePets(arr, petsArr) {
   return visiblePets;
 }
 
+let number = countNumberOf(window.screen.width);
+console.log(number);
+
 let page = 1;
 
 let visiblePets = getVisiblePets(visiblePar, petsArr);
@@ -76,7 +86,7 @@ let visiblePets = getVisiblePets(visiblePar, petsArr);
 let newPetMatrix = [];
 newPetMatrix.push(visiblePets);
 createRandomArr(petsContent).forEach((arr) => newPetMatrix.push(arr));
-console.log(newPetMatrix);
+// console.log(newPetMatrix);
 
 function swichToPage(event) {
   if (!event.target.classList.contains("pets-button")) return;
@@ -91,7 +101,7 @@ function swichToPage(event) {
     pageNumber.textContent = page;
     // console.log(page);
 
-    if (page == 6) {
+    if (page == number[0]) {
       rightPetBtn.disabled = true;
       endPetBtn.disabled = true;
     }
@@ -110,7 +120,7 @@ function swichToPage(event) {
     }
   } else if (event.target.classList.contains("to-end-btn")) {
     deletePreviousPage(visibleCards);
-    page = 6;
+    page = number[0];
     makeVisible(newPetMatrix[page - 1]);
     pageNumber.textContent = page;
     rightPetBtn.disabled = true;
